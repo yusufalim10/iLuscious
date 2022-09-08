@@ -280,7 +280,7 @@
     height: 100vh;
     width: 35vw;
     position: absolute;
-    top: -13%;
+    top: -6%;
     right: 0;
 }
 
@@ -317,7 +317,7 @@
 .login-regist_container {
     z-index: 3;
     width: 200px;
-    height: 305px;
+    height: 350px;
     overflow: hidden;
     position: relative;
 }
