@@ -1,0 +1,515 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "atkinson hyperlegible", sans-serif
+}
+
+:root {
+    --black: #2C2C2C;
+    --accent-color: linear-gradient(322.84deg, #D76C00 10.28%, #D76C00 89.71%);
+    --primary-color: radial-gradient(63.04% 63.04% at 50% 50%, #D70000 28.45%, #560000 100%);
+    --box-shadow: 17px 22px 26px rgba(0, 0, 0, 0.35);
+    --cubic-berzier: cubic-bezier(.63,.14,.11,1)
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+
+
+.navbar_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    width: 65vw;
+    height: 100px;
+    padding: 0px 1rem;
+    z-index: 50;
+    transform: translateX(700px);
+    transition: transform 1s ease;
+}
+
+.ornament {
+    width: max(55vw, 1000px);
+    height: max(20vw, 370px);
+    background: var(--accent-color);
+    border-radius: 50%;
+    position: absolute;
+    top: -25%;
+    bottom: 0;
+    right: -20%;
+    transform: rotate(-8deg);
+    z-index: 1;
+}
+
+.ornament2 {
+    width: max(55vw, 1000px);
+    height: max(20vw, 370px);
+    background: var(--accent-color);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -20%;
+    left: -50%;
+    transform: rotate(-8deg);
+    z-index: 1;
+}
+
+.navbar_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    z-index: 10;
+}
+
+.navbar_item, .navbar_contact_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 1rem;
+    margin: 0px 2rem;
+    height: 80px;
+    width: auto;
+}
+
+.navbar_links, .navbar_contact {
+    text-decoration: none;
+    position: relative;
+    color: var(--black);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.navbar_links:hover, .navbar_contact:hover {
+    color: rgba(255,255,255,0.6);
+}
+
+.navbar_contact_item i {
+    margin-left: 10px;
+}
+
+.contact_options {
+    display: block;
+    position: absolute;
+    top: 80%;
+    right: 5%;
+    width: 350px;
+    height: 0;
+    background-color: #D76C00;
+    list-style: none;
+    color: #1d1d1d;
+    border-radius: 15px;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s var(--cubic-berzier);
+}
+
+.contact_list {
+    height: 30px;
+}
+
+.contact_links {
+    text-decoration: none;
+    color: #1d1d1d;
+}
+
+.navbar_contact_item:hover .contact_options {
+    padding: 20px;
+    height: 120px;
+    box-shadow: -7px 5px 10px 3px;
+    opacity: 1;
+}
+
+
+
+/* The Rightside Content */
+
+.rightside_container {
+    background-color: var(--black);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: max(35vw, 350px);
+    height: 100%;
+    box-shadow: -35px 0px 30px 5px rgba(0,0,0,0.5);
+    overflow: hidden;
+    z-index: 1;
+    transition: width 1s var(--cubic-berzier);
+}
+
+.rightside_container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(145deg, rgba(0,0,0,0), rgba(0,0,0,0.35), rgba(0,0,0,0.60));
+}
+
+.rightside_container:hover {
+    width: max(65vw, 500px);
+}
+
+.rightside_container:hover .navbar_container {
+    transform: translateX(0px);
+    transition: transform 1s ease;
+}
+
+.rightside_content {
+    position: relative;
+    float: right;
+    width: 65vw;
+    height: 100vh;
+    z-index: 15;
+}
+
+/* Testimonials */
+
+.testimonials_container {
+    display: flex;
+    width: max(30vw, 300px);
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+}
+
+.testimonials_content {
+    display: flex;
+    justify-content: center;
+    width: max(30vw, 300px);
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.testimonial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    width: max(25vw, 250px);
+    font-family: "neuton";
+    font-size: max(1vw, 0.8rem);
+    font-weight: 100;
+    margin-bottom: 2rem;
+}
+
+.testimonial2 {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.testimonial2 h5 {
+    text-align: right;
+}
+
+.testimonial2 .rating_container {
+    float: right;
+}
+
+.testimonial .rating_container label {
+    color: yellow;
+}
+
+.review {
+    margin-top: 2rem;
+}
+
+.review h5 {
+    width: max(17.5vw,175px);
+}
+
+.quotes {
+    text-align: center;
+    color: #fff;
+    font-family: "neuton";
+    font-size: max(1vw, 0.8rem);
+    margin: 5rem 0px;
+    width: max(25vw, 250px);
+    font-style: italic;
+}
+
+.rating_container {
+    margin-top: 5px;
+}
+
+.rating_container input {
+    display: none;
+}
+
+.socials_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+}
+
+.socials_container a {
+    font-size: max(2vw, 1rem);
+    color: #1d1d1d;
+    margin: 0px 5px;
+}
+
+.socials_container a:hover {
+    color: rgba(255,255,255,0.9);
+}
+
+
+/* Registration */
+
+.registration_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 35vw;
+    position: absolute;
+    top: -13%;
+    right: 0;
+}
+
+.registration_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 8rem;
+
+}
+
+.logo_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+.tagline {
+    color: #fff;
+    font-weight: 600;
+    position: absolute;
+    bottom: 15%;
+}
+
+.hilite {
+    color: #D76C00
+}
+
+.login-regist_container {
+    z-index: 3;
+    width: 200px;
+    height: 305px;
+    overflow: hidden;
+    position: relative;
+}
+
+.forms {
+    display: flex;
+    position: absolute;
+    transform: translateX(0px);
+    transition: transform 0.5s var(--cubic-berzier);
+}
+
+.forms.active {
+    transform: translateX(-220px);
+    transition: transform 0.5s var(--cubic-berzier);
+}
+
+.regist_container, .login_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.input, .input_region {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    margin-bottom: 1rem;
+    background: #fff;
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+input {
+    font-family: "kumbh sans";
+    font-size: 0.8rem;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.input i, .input_region i {
+    position: absolute;
+    right: 5%;
+}
+
+.input_region {
+    cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.checkbox_container {
+    display: none;
+}
+
+.selected {
+    color: rgb(129, 129, 129);
+    font-family: "kumbh sans";
+    font-size: 0.8rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.region_container {
+    display: block;
+    width: 200px;
+    height: 0;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    transition: height 0.5s var(--cubic-berzier);
+}
+
+.region_container.active {
+    height: 150px;
+    transition: height 0.5s var(--cubic-berzier);
+}
+
+.radio {
+    display: none;
+}
+
+.region_options {
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.option, .option label {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 30px;
+    font-size: 0.8rem;
+    background-color: #fff;
+    padding-left: 5px;    
+    border-bottom: solid #ccc 0.2px;
+    cursor: pointer;
+}
+
+.option:hover, .option label:hover {
+    background: var(--accent-color);
+}
+
+.sign-up_btn, .sign-in_btn {
+    height: 40px;
+    width: 100px;
+    margin: 2rem 0px;
+    background: var(--accent-color);
+    color: #fff;
+    padding: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.sign-up_btn:hover, .sign-in_btn:hover {
+    background: rgba(255,255,255,0.8);
+    color: black;
+}
+
+.regist_container h5, .login_container h5 {
+    color: #fff;
+    font-size: 0.75rem;
+}
+
+.warning {
+
+    width: 200px;
+    height: 0;
+    text-align: center;
+    color: #D76C00;
+    font-weight: 300;
+    font-size: 0.7rem;
+}
+
+.sign-in, .sign-up {
+    text-decoration: none;
+    color: #D76C00;
+}
+
+.sign-in:hover, .sign-up:hover {
+    color: rgba(255,255,255,0.9);
+}
+
+.unHide {
+    cursor: pointer;
+}
+
+/* .rightside_container {
+    display: none;
+} */
+
+
+
+
+
+
+/* The Leftside Content */
+
+.leftside_container {
+    height: 100vh;
+    width: 65vw;
+    background: var(--primary-color);
+}
+
+.leftside_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.food_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    /* top: 50%;
+    left: 50%; */
+}
+
+.food-1 {
+    filter: drop-shadow(-15px 17px 20px);
+}
