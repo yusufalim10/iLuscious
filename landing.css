@@ -194,6 +194,7 @@
     align-items: center;
     flex-direction: column;
     padding: 1rem;
+    position: relative;
 }
 
 .testimonial {
@@ -207,6 +208,37 @@
     font-weight: 100;
     margin-bottom: 2rem;
 }
+
+.testimonial1 img, .testimonial2 img, .testimonial3 img {
+    position: relative;
+    overflow: visible;
+}
+
+.testimonial1 .rating_container::after {
+    content: "-Ari";
+    width: 100px;
+    height: 100px;
+    z-index: 200;
+    font-size: 1rem;
+}
+
+.testimonial2 .rating_container::before {
+    content: "-Amanda";
+    width: 100px;
+    height: 100px;
+    z-index: 200;
+    font-size: 1rem;
+}
+
+
+.testimonial3 .rating_container::after {
+    content: "-Adam";
+    width: 100px;
+    height: 100px;
+    z-index: 200;
+    font-size: 1rem;
+}
+
 
 .testimonial2 {
     display: flex;
@@ -450,6 +482,7 @@ input[type=number]::-webkit-outer-spin-button {
 .regist_container h5, .login_container h5 {
     color: #fff;
     font-size: 0.75rem;
+    font
 }
 
 .warning {
@@ -501,15 +534,66 @@ input[type=number]::-webkit-outer-spin-button {
     position: relative;
 }
 
-.food_container {
+.food.display {
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    /* top: 50%;
-    left: 50%; */
+    overflow: hidden;
+    position: relative;
 }
 
-.food-1 {
+.food_container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    width: 500%;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+}
+
+.food-1 img{
     filter: drop-shadow(-15px 17px 20px);
+    transition: transform 1s var(--cubic-berzier);
+}
+
+.accessories {
+    position: absolute;
+    bottom: 0;
+}
+
+.accessories img:first-child {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(-500px, 500px);
+    transition: transform 0.7s cubic-bezier(.24,.68,.54,1.23);
+    filter: drop-shadow(5px -5px 10px ) ;
+}
+
+.accessories img:last-child {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translate(500px, 500px);
+    transition: transform 1.2s cubic-bezier(.24,.68,.54,1.23);
+    filter: drop-shadow(-5px -5px 10px ) ;
+}
+
+.leftside_container:hover .food-1 img {
+    transform: scale(120%) rotate(45deg);
+    transition: transform 1s var(--cubic-berzier);
+}
+
+.leftside_container:hover .accessories img:first-child {
+    transform: translate(-200px, 200px);
+    transition: transform 1.2s cubic-bezier(.24,.68,.54,1.23);
+}
+
+.leftside_container:hover .accessories img:last-child {
+    transform: translate(175px, 100px);
+    transition: transform 1.2s cubic-bezier(.24,.68,.54,1.23);
 }
