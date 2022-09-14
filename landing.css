@@ -1481,7 +1481,7 @@
     }
 
     .navbar_menu.is-active {
-        height: 250px;
+        height: 150px;
     }
     
     .navbar_item, .navbar_contact_item {
@@ -1489,9 +1489,9 @@
         align-items: center;
         justify-content: flex-end;
         position: relative;
-        padding: 2rem;
-        height: 50px;
-        width: 200px;
+        padding: 1.2rem;
+        height: 30px;
+        width: 150px;
         background-color: #fff;
         cursor: pointer;
     }
@@ -1507,7 +1507,7 @@
     .navbar_contact_item > i {
         float: left;
         position: absolute;
-        left: 10%;
+        left: 0;
         transform: rotate(90deg);
         margin-left: 20%;
     }
@@ -1517,7 +1517,7 @@
         position: relative;
         color: var(--black);
         font-weight: 600;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         text-align: right;
     }
     
@@ -1528,9 +1528,9 @@
     .contact_options {
         display: block;
         position: absolute;
-        top: 350%;
+        top: 250%;
         right: 20%;
-        width: 350px;
+        width: 220px;
         height: 0;
         background-color: #fff;
         list-style: none;
@@ -1554,6 +1554,7 @@
         text-decoration: none;
         color: #1d1d1d;
         margin-left: 15px;
+        font-size: 0.7rem;
     }
     
     .contact_options.active {
@@ -1616,6 +1617,8 @@
         height: 350px;
         overflow: hidden;
         position: relative;
+        padding: 15px;
+        box-sizing: content-box;
     }
     
     .forms {
