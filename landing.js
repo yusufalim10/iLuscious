@@ -123,12 +123,7 @@ navbarContact.addEventListener("click", ()=>{
     contactOptions.classList.toggle("active");
 })
 
-// document.onclick = function(div) {
-//     if(div.target.classList !== "navbar_menu" || div.target.classList !== "contact_options" || div.target.classList !== "mobile_navbar") {
-//         navbarMenu.classList.remove("is-active");
-//         contactOptions.classList.remove("active");
-//     }
-// }
+
 
 
 

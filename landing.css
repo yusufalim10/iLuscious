@@ -98,8 +98,12 @@
     .navbar_contact_item i {
         margin-left: 10px;
     }
-    
+
     .contact_options {
+        display: none;
+    }
+    
+    .contact_options_desktop {
         display: block;
         position: absolute;
         top: 80%;
@@ -115,16 +119,16 @@
         transition: all 0.5s var(--cubic-berzier);
     }
     
-    .contact_list {
+    .contact_list_desktop {
         height: 30px;
     }
     
-    .contact_links {
+    .contact_links_desktop {
         text-decoration: none;
         color: #1d1d1d;
     }
     
-    .navbar_contact_item:hover .contact_options {
+    .navbar_contact_item:hover .contact_options_desktop {
         padding: 20px;
         height: 120px;
         box-shadow: -7px 5px 10px 3px;
@@ -792,8 +796,8 @@
 
 
 
-@media screen and (min-width: 651px) {
-    .leftside_container div, .leftside_container img, .leftside_container input {
+@media screen and (min-width: 651px) and (max-width: 999px) {
+    .leftside_container, .contact_options_desktop {
         display: none;
         position: relative;
     }
@@ -1353,12 +1357,7 @@
 
 
 @media screen and (max-width: 650px) {
-    .leftside_container div, .leftside_container img, .leftside_container input {
-        display: none;
-        position: relative;
-    }
-
-    .testimonials_container {
+    .leftside_container, .testimonials_container, .contact_options_desktop {
         display: none;
     }
 
