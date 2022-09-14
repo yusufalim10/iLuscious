@@ -52,6 +52,86 @@ unHide.forEach(unHide =>{
 })
 
 
+
+
+
+// Food Slider
+
+const foodSlider = document.querySelector(".food_container");
+const food = document.querySelectorAll(".food");
+const nextButton = document.querySelector(".next_btn");
+const prevButton = document.querySelector(".prev_btn");
+const foodImage = document.querySelectorAll(".food_image");
+
+let foodIndex = 0;
+const imageSize = food[0].clientWidth;
+
+console.log(food.length - 1)
+
+nextButton.removeAttribute("disabled")
+
+nextButton.addEventListener("click", ()=>{
+        foodIndex++
+        if(foodIndex < food.length) {
+            prevButton.removeAttribute("disabled")
+            foodSlider.style.transform = 'translateX(' + (-imageSize * foodIndex) + 'px)';
+            foodSlider.style.transition = 'transform 1s cubic-bezier(.63,.14,.11,1)';
+            foodImage.forEach(foodImage =>{
+                foodImage.style.transform = 'rotate(' + (90 * foodIndex) + 'deg)'
+                foodImage.style.transition = 'transform 1s cubic-bezier(.63,.14,.11,1)'
+            })
+        } else {
+            foodIndex = food.length - 1
+            nextButton.setAttribute("disabled", "disabled");
+        }
+})
+
+prevButton.setAttribute("disabled", "disabled");
+
+prevButton.addEventListener("click", ()=>{ 
+    foodIndex--
+    if(foodIndex >= 0) {
+        nextButton.removeAttribute("disabled")
+        foodSlider.style.transform = 'translateX(' + (-imageSize * foodIndex) + 'px)';
+        foodSlider.style.transition = 'transform 1s cubic-bezier(.63,.14,.11,1)';
+        foodImage.forEach(foodImage =>{
+            foodImage.style.transform = 'rotate(' + (90 * foodIndex) + 'deg)'
+            foodImage.style.transition = 'transform 1s cubic-bezier(.63,.14,.11,1)'
+        })
+    } else {
+        foodIndex = 0
+        prevButton.setAttribute("disabled", "disabled")
+    }
+    
+})
+
+
+// Mobile Navbar 
+
+const mobileToggle = document.querySelector (".mobile_navbar");
+const navbarMenu = document.querySelector (".navbar_menu");
+const navbarContact = document.querySelector(".navbar_contact_item")
+const contactOptions = document.querySelector(".contact_options");
+
+mobileToggle.addEventListener("click", ()=>{
+    mobileToggle.classList.toggle ("active");
+    navbarMenu.classList.toggle ("is-active");
+    contactOptions.classList.remove("active")
+})
+
+navbarContact.addEventListener("click", ()=>{
+    contactOptions.classList.toggle("active");
+})
+
+// document.onclick = function(div) {
+//     if(div.target.classList !== "navbar_menu" || div.target.classList !== "contact_options" || div.target.classList !== "mobile_navbar") {
+//         navbarMenu.classList.remove("is-active");
+//         contactOptions.classList.remove("active");
+//     }
+// }
+
+
+
 // const email = document.querySelector (".email_field");
 // const password = document.querySelector (".password_field");
 // let warning = document.querySelector (".warning");
@@ -59,3 +139,5 @@ unHide.forEach(unHide =>{
 // if(email.value !== (`${email.value}@gmail.com`)) {
 //     warning.textContent = "You need to enter correct Email"
 // }
+
+

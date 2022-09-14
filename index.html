@@ -19,6 +19,10 @@
 
         <div class="leftside_container">
             <div class="leftside_content">
+                <div class="next_prev_btn">
+                    <button disabled class="next_btn"><i class="bi bi-caret-right-square-fill"></i></button>
+                    <button class="prev_btn"><i class="bi bi-caret-left-square-fill"></i></button>
+                </div>
                 <div class="accessories">
                     <img src="./Images/png-napkin--372.png" alt="napkin" width="500px">
                     <img src="./Images/Spoon-And-Fork.png" alt="utensil" width="500px">
@@ -26,9 +30,76 @@
                 <div class="food_display">
                     <div class="food_container">
                         
-                        <div class="food-1">
-                            <img src="./Images/food-1.png" alt="ramen" width="700px">
-    
+                        <div class="food food-1">
+                            <img class="food_image" src="./Images/food-1.png" alt="ramen" width="700px">
+                            <img class="food_title" src="./Images/seafood-ramen.png" alt="ramentitle" width="500px">
+                            <img class="food_price" src="./Images/food1-price.png" alt="food1price" width="300px">
+                            <div class="rating_container">
+                                <input type="radio" name="rate" id="rate-5">
+                                <label class="bi bi-star-fill" for="rate-5"></label>
+                                <input type="radio" name="rate" id="rate-4">
+                                <label class="bi bi-star-fill" for="rate-4"></label>
+                                <input type="radio" name="rate" id="rate-3">
+                                <label class="bi bi-star-fill" for="rate-3"></label>
+                                <input type="radio" name="rate" id="rate-2">
+                                <label class="bi bi-star-fill" for="rate-2"></label>
+                                <input type="radio" name="rate" id="rate-1">
+                                <label class="bi bi-star-fill" for="rate-1"></label>
+                            </div>
+                        </div>
+
+                        <div class="food food-2">
+                            <img class="food_image" src="./Images/food-2.png" alt="food2" width="700px">
+                            <img class="food_title" src="./Images/salmon-salad.png" alt="ramentitle" width="500px">
+                            <img class="food_price" src="./Images/food2-price.png" alt="food1price" width="300px">
+                            <div class="rating_container">
+                                <input type="radio" name="rate" id="rate-5">
+                                <label class="bi bi-star-fill" for="rate-5"></label>
+                                <input type="radio" name="rate" id="rate-4">
+                                <label class="bi bi-star-fill" for="rate-4"></label>
+                                <input type="radio" name="rate" id="rate-3">
+                                <label class="bi bi-star-fill" for="rate-3"></label>
+                                <input type="radio" name="rate" id="rate-2">
+                                <label class="bi bi-star-fill" for="rate-2"></label>
+                                <input type="radio" name="rate" id="rate-1">
+                                <label class="bi bi-star-fill" for="rate-1"></label>
+                            </div>
+                        </div>
+
+                        <div class="food food-3">
+                            <img class="food_image" src="./Images/food-3.png" alt="food3" width="700px">
+                            <img class="food_title" src="./Images/beef-steak.png" alt="ramentitle" width="500px">
+                            <img class="food_price" src="./Images/food3-price.png" alt="food1price" width="300px">
+                            <div class="rating_container">
+                                <input type="radio" name="rate" id="rate-5">
+                                <label class="bi bi-star-fill" for="rate-5"></label>
+                                <input type="radio" name="rate" id="rate-4">
+                                <label class="bi bi-star-fill" for="rate-4"></label>
+                                <input type="radio" name="rate" id="rate-3">
+                                <label class="bi bi-star-fill" for="rate-3"></label>
+                                <input type="radio" name="rate" id="rate-2">
+                                <label class="bi bi-star-fill" for="rate-2"></label>
+                                <input type="radio" name="rate" id="rate-1">
+                                <label class="bi bi-star-fill" for="rate-1"></label>
+                            </div>
+                        </div>
+
+                        <div class="food food-4">
+                            <img class="food_image" src="./Images/food-4.png" alt="food4" width="700px">
+                            <img class="food_title" src="./Images/fruit-salad.png" alt="ramentitle" width="500px">
+                            <img class="food_price" src="./Images/food4-price.png" alt="food1price" width="300px">
+                            <div class="rating_container">
+                                <input type="radio" name="rate" id="rate-5">
+                                <label class="bi bi-star-fill" for="rate-5"></label>
+                                <input type="radio" name="rate" id="rate-4">
+                                <label class="bi bi-star-fill" for="rate-4"></label>
+                                <input type="radio" name="rate" id="rate-3">
+                                <label class="bi bi-star-fill" for="rate-3"></label>
+                                <input type="radio" name="rate" id="rate-2">
+                                <label class="bi bi-star-fill" for="rate-2"></label>
+                                <input type="radio" name="rate" id="rate-1">
+                                <label class="bi bi-star-fill" for="rate-1"></label>
+                            </div>
                         </div>
                     </div>
 
@@ -40,6 +111,12 @@
         <div class="rightside_container">
 
             <nav class="navbar_container">
+
+                <div class="mobile_navbar">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             
                 <ul class="navbar_menu">
                     <li class="navbar_item">
@@ -57,20 +134,21 @@
                     <li class="navbar_contact_item">
                         <a href="#" class="navbar_contact">Contact Us</a>
                         <i class="bi bi-caret-down-fill" style="color: #141414;"></i>
-                        <ul class="contact_options">
-                            <li class="contact_list">
-                                <i class="bi bi-envelope"></i>
-                                <a href="#" class="contact_links">humanresource@iLuscious.com</a>
-                            </li>
-                            <li class="contact_list">
-                                <i class="bi bi-phone"></i>
-                                <a href="#" class="contact_links">(+62) 21-XXXX</a>
-                            </li>
-                            <li class="contact_list">
-                                <i class="bi bi-house"></i>
-                                <a href="#" class="contact_links">Sudirman St. Number 24 South Jakarta</a>
-                            </li>
-                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="contact_options">
+                    <li class="contact_list">
+                        <i class="bi bi-envelope"></i>
+                        <a href="#" class="contact_links">humanresource@iLuscious.com</a>
+                    </li>
+                    <li class="contact_list">
+                        <i class="bi bi-phone"></i>
+                        <a href="#" class="contact_links">(+62) 21-XXXX</a>
+                    </li>
+                    <li class="contact_list">
+                        <i class="bi bi-house"></i>
+                        <a href="#" class="contact_links">Sudirman St. Number 24 South Jakarta</a>
                     </li>
                 </ul>
             </nav>
@@ -159,7 +237,7 @@
     
                         <div class="login-regist_container">
                             <div class="forms">
-                                <div class="regist_container">
+                                <form class="regist_container">
                                     <div class="input">
                                         <input class="email_field" type="email" placeholder="Email" required>
                                     </div>
@@ -211,12 +289,12 @@
 
                                     <div class="warning"></div>
                                     
-                                    <button class="sign-up_btn">Sign Up</button>
+                                    <button type="submit" class="sign-up_btn">Sign Up</button>
     
                                     <h5>Already have an account? <a class="sign-in" href="#">Sign In</a></h5>
-                                </div>
+                                </form>
                                 
-                                <div class="login_container">
+                                <form class="login_container">
                                     <div class="input">
                                         <input class="email_field" type="email" placeholder="Email" required>
                                     </div>
@@ -230,7 +308,7 @@
                                     <button class="sign-in_btn">Sign In</button>
     
                                     <h5>Not a member? <a class="sign-up" href="#">Sign Up</a></h5>
-                                </div>
+                                </form>
                             </div>
                         </div>
     
