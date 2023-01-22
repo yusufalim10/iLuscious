@@ -1,0 +1,90 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId            String  @map("user_id") @db.ObjectId
+  type              String
+  provider          String
+  providerAccountId String  @map("provider_account_id")
+  refresh_token     String? @db.String
+  access_token      String? @db.String
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.String
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id") @db.ObjectId
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model User {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  username      String    @unique
+  name          String
+  email         String    @unique
+  emailVerified DateTime? @map("email_verified")
+  password      String
+  image         String    @default("https://res.cloudinary.com/djbymyayp/image/upload/v1674197519/samples/default_user_mfroql.png")
+  accounts      Account[]
+  sessions      Session[]
+  foodOrdered   Food[]
+  review        Review[]
+
+  @@unique([name, email])
+  @@map("users")
+}
+
+model VerificationToken {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verificationtokens")
+}
+
+model Food {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  foodName String
+  price    Int
+  rating   Float?
+  user     User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId   String? @db.ObjectId
+
+  @@map("foods")
+}
+
+model Review {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  body      String
+  createdAt String?
+  rating    Int?
+  User      User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String? @db.ObjectId
+
+  @@map("reviews")
+}

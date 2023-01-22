@@ -1,0 +1,58 @@
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: 800px;
+    position: relative;
+}
+
+.image {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.image p {
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    bottom: 20%;
+}
+
+.image p span {
+    color: var(--accentbasecolor);
+}
+
+.inputContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 350px;
+    height: 500px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+}
+
+.inputSlider {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-25%) translateY(-50%);
+    transition: all 0.3s ease-in-out;
+}
+
+.slided {
+    transform: translateX(-75%) translateY(-50%);
+    transition: all 0.3s ease-in-out;
+}

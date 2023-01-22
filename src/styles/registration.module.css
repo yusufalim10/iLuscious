@@ -1,0 +1,31 @@
+.registration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 500px;
+}
+
+.registration form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hide {
+    height: 0px;
+}
+
+.registration form p {
+    color: #fff;
+}
+
+.registration form p span {
+    cursor: pointer;
+    color: var(--accentbasecolor)
+}
+
+.registration form p span:hover {
+    color: var(--accentbasehover)
+}

@@ -1,0 +1,90 @@
+.checked {
+    display: flex;
+    color: #59afff;
+    margin: 0px 0.5rem;
+}
+
+.invalid {
+    display: flex;
+    color: red;
+    margin: 0px 0.5rem;
+}
+
+.iconHide {
+    display: none;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 30px;
+    padding: 22px 3px;
+    border-radius: 15px;
+    border: solid #fff 2px;
+    position: relative;
+    margin: 1rem 0px;
+    transition: all 0.2s ease-in-out;
+}
+
+.userInput, .emailInput, .passwordInput, .confirmInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 30px;
+    padding: 22px 3px;
+    border-radius: 15px;
+    border: solid #fff 2px;
+    position: relative;
+    margin: 2rem 0px 0px 0px;
+    transition: all 0.1s ease-in-out;
+}
+
+.labelBlurred {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #242424;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+}
+
+.input input, .userInput input, .emailInput input, .passwordInput input, .confirmInput input {
+    width: 300px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    border-radius: 10px;
+    color: #131313;
+}
+
+.labelFocusedUser, .labelFocusedPassword, .labelFocusedEmail, .labelFocusedConfirm {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #242424;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-250%) scale(90%) translateX(-5%);
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.eye {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-40%);
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}

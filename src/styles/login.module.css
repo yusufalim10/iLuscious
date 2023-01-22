@@ -1,0 +1,29 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 400px;
+}
+
+.login form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login form p {
+    color: #fff;
+}
+
+.login form p span {
+    color: var(--accentbasecolor);
+    cursor: pointer;
+}
+
+.login form p span:hover {
+    color: var(--accentbasehover);
+}
+
+
